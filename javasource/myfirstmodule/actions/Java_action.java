@@ -13,18 +13,26 @@ import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 import org.apache.ibatis.jdbc.SQL;
 
-public class Java_action extends CustomJavaAction<java.lang.String> {
-	public Java_action(IContext context) {
+public class Java_action extends CustomJavaAction<java.lang.String>
+{
+	private java.lang.String AgentCode;
+
+	public Java_action(IContext context, java.lang.String AgentCode)
+	{
 		super(context);
+		this.AgentCode = AgentCode;
 	}
 
 	@java.lang.Override
-	public java.lang.String executeAction() throws Exception {
+	public java.lang.String executeAction() throws Exception
+	{
 		// BEGIN USER CODE
 		return new SQL()
-				.SELECT("id, name").FROM("PERSON A")
-				.WHERE("name like ?")
-				.WHERE("id = ?").toString();
+				.SELECT("c.CUST_NAME, c.CUST_CODE, a.AGENT_NAME, a.AGENT_CODE")
+				.FROM("customer c")
+				.INNER_JOIN("agents a")
+				.WHERE("c.AGENT_CODE = a.AGENT_CODE")
+				.WHERE(String.format("a.AGENT_CODE = '%s'", AgentCode)).toString();
 		// END USER CODE
 	}
 
@@ -32,7 +40,8 @@ public class Java_action extends CustomJavaAction<java.lang.String> {
 	 * Returns a string representation of this action
 	 */
 	@java.lang.Override
-	public java.lang.String toString() {
+	public java.lang.String toString()
+	{
 		return "Java_action";
 	}
 
