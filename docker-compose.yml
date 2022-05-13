@@ -20,10 +20,12 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - todo-mysql-data:/var/lib/mysql
+      # - todo-mysql-data:/var/lib/mysql
+      - "./scripts/schema.sql:/docker-entrypoint-initdb.d/1.sql"
+      - "./scripts/data.sql:/docker-entrypoint-initdb.d/2.sql"
     environment: 
       MYSQL_ROOT_PASSWORD: 123
       MYSQL_DATABASE: mendix
 
-volumes:
-  todo-mysql-data:
+# volumes:
+  # todo-mysql-data:
