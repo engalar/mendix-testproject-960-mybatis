@@ -22,7 +22,7 @@
         "MXCONSOLE_SERVER_URL": "http://127.0.0.1:8090/"
       },
       "args": "${workspaceFolder}/deployment",
-      "preLaunchTask": "${defaultBuildTask}",
+      // "preLaunchTask": "${defaultBuildTask}",
     }
   ]
 }
