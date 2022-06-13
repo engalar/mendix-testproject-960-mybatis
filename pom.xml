@@ -27,6 +27,7 @@
           <source>11</source>
           <target>11</target>
           <encoding>UTF-8</encoding>
+          <forceJavacCompilerUse>true</forceJavacCompilerUse>
         </configuration>
       </plugin>
       <plugin>
