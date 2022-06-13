@@ -2,7 +2,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mendixcn</groupId>
-  <artifactId>myfirstmodule</artifactId>
+  <artifactId>MyFirstModule</artifactId>
   <version>1.1.0</version>
   <properties>
     <mendixInstallDir>C:\Program Files\Mendix</mendixInstallDir>
@@ -145,6 +145,12 @@
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
       <version>2.10.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>commons-beanutils</artifactId>
+      <version>1.9.4</version>
     </dependency>
 
   </dependencies>
