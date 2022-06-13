@@ -16,3 +16,4 @@ theme-cache
 !/javascriptsource/**/node_modules/
 /nativemobile/builds/
 .history
+target
